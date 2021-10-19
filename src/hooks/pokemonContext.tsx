@@ -60,7 +60,7 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
     }, []);
 
     return (
-        <PokemonContext.Provider value={{ fetchPokemons, pokemons, /*isLoadingMorePokemons*/ }}>
+        <PokemonContext.Provider value={{ fetchPokemons, pokemons }}>
             {children}
         </PokemonContext.Provider>
     );
