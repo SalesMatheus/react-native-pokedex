@@ -2,6 +2,8 @@ import React from 'react';
 import { Image } from 'react-native';
 import { TouchableOpacity, Alert } from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
+
 import {
   Container,
   ImageBackground,
@@ -22,10 +24,12 @@ interface Props {
 }
 
 export function CardPokemons({ pokemon: pokemonData }: Props) {
+    const { navigate } = useNavigation();
 
     function handlePokemonDetail(PokemonId: number){
         if(PokemonId){
-
+            //@ts-ignore
+            navigate('PokemonDetail', { PokemonId });
         }else{
             Alert.alert('Pokémon não encontrado!');
         }
