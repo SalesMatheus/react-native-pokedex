@@ -2,6 +2,9 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
+
+import { Routes } from './src/routes';
+
 import {
   useFonts,
   Inter_400Regular,
@@ -14,8 +17,6 @@ import {
 } from '@expo-google-fonts/archivo';
 
 import theme from './src/global/styles/theme';
-
-import { PokemonList } from './src/screens/PokemonList';
 
 import { PokemonContextProvider } from './src/hooks/pokemonContext';
 
@@ -40,7 +41,7 @@ export default function App() {
         translucent 
       />
       <PokemonContextProvider>
-        <PokemonList />
+        <Routes />
       </PokemonContextProvider>
 
     </ThemeProvider>

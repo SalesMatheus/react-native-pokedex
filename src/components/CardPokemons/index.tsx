@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, Alert } from 'react-native';
 
 import {
   Container,
@@ -22,8 +22,17 @@ interface Props {
 }
 
 export function CardPokemons({ pokemon: pokemonData }: Props) {
+
+    function handlePokemonDetail(PokemonId: number){
+        if(PokemonId){
+
+        }else{
+            Alert.alert('Pokémon não encontrado!');
+        }
+    }
+
     return (
-        <TouchableOpacity activeOpacity={0.6}>
+        <TouchableOpacity activeOpacity={0.6} onPress={() => handlePokemonDetail(pokemonData.id)}>
             <Container>
                 <ImageBackground>
                     <Image

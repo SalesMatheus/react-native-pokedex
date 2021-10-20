@@ -33,8 +33,7 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
     const [pokemons, setPokemons] = useState<PokemonListProps[]>([]);
 
     const formatPokemonData = useCallback((data: ApiCallProps[]) => {
-        return Array.from(data || [], (item: ApiCallProps) => {
-            console.log(item)
+        return Array.from(data, (item: ApiCallProps) => {
             const pokemonId = item?.url.split('/')[6]
             const pokemonImage = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png`;
 
@@ -50,12 +49,11 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
         try {
             const response = await Api.get(`/pokemon?offset=0&limit=10`);
             //@ts-ignore
-            const pokemonsDataFormatted = formatPokemonData(response?.data?.results);
+            const pokemonsDataFormatted = formatPokemonData(response?.data?.results) as unknown;
             //@ts-ignore
-            setPokemons(pokemonsDataFormatted)
+            setPokemons(pokemonsDataFormatted);
         } catch (error) {
-            //@ts-ignore
-            throw new (error);
+            throw new Error('Ocorreu um erro!');
         }
     }, []);
 
@@ -66,8 +64,9 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
     );
 };
 
-const usePokemonContext = (): any => {
+function usePokemonContext(){
     const context = useContext(PokemonContext);
+
     return context;
 };
 
