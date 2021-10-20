@@ -29,7 +29,7 @@ interface PokemonContextProviderProps {
     children: ReactNode;
 }
 
-const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
+function PokemonContextProvider({ children }: PokemonContextProviderProps){
     const [pokemons, setPokemons] = useState<PokemonListProps[]>([]);
 
     const formatPokemonData = useCallback((data: ApiCallProps[]) => {
@@ -49,7 +49,7 @@ const PokemonContextProvider = ({ children }: PokemonContextProviderProps) => {
         try {
             const response = await Api.get(`/pokemon?offset=0&limit=10`);
             //@ts-ignore
-            const pokemonsDataFormatted = formatPokemonData(response?.data?.results) as unknown;
+            const pokemonsDataFormatted = formatPokemonData(response?.data?.results);
             //@ts-ignore
             setPokemons(pokemonsDataFormatted);
         } catch (error) {
