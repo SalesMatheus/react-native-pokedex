@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Image } from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import { BorderlessButton } from "react-native-gesture-handler";
+import { Feather } from '@expo/vector-icons';
 
 import api from '../../service/api';
 
@@ -19,6 +21,7 @@ import {
     ImageBackground,
     ImageGroup
 } from './styles';
+
 
 interface PokemonProps {
     id: number;
@@ -52,6 +55,8 @@ export function PokemonDetail() {
     const [isLoading, setIsLoading] = useState(true);
     const PokemonId = useRoute<any>().params.PokemonId;
 
+    const navigation =  useNavigation();
+
     async function fetchPokemon(){
         const { data }:any = await api.get(`/pokemon/${PokemonId}`);
         
@@ -64,13 +69,24 @@ export function PokemonDetail() {
         fetchPokemon();
     },[]);
 
+    function handleGoBack(){
+        navigation.goBack();
+    }
     
     return (
         <Container>
             {
                 !isLoading && 
                     <>
-                        <Header />
+                        <Header>
+                            <BorderlessButton onPress={handleGoBack}>
+                                <Feather 
+                                    name="arrow-left"
+                                    size={ 22 }
+                                    color={'#DDDDEE'}
+                                />
+                            </BorderlessButton>
+                        </Header>
                         <HeaderInfo>
                             <PokemonName>
                                 {pokemonDetails?.name}
@@ -101,7 +117,11 @@ export function PokemonDetail() {
                                 />
                             </ImageBackground>
                         </ImageGroup>
-                        <ModalView weight={pokemonDetails!.weight} height={pokemonDetails!.height}/>
+                        <ModalView 
+                            stats={pokemonDetails!.stats}
+                            weight={pokemonDetails!.weight} 
+                            height={pokemonDetails!.height}
+                        />
                     </>
             }
             

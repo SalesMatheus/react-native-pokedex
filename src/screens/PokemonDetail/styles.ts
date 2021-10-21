@@ -3,10 +3,15 @@ import styled, { css } from 'styled-components/native';
 export const Container = styled.View`
     flex: 1;
     background-color: ${({ theme }) => theme.colors.primary};
+    padding: 0px 10px;
 `;
 
 export const Header = styled.View`
-    height: 100px;
+
+    justify-content: center;
+    /* margin-top: 20px; */
+    padding: 10px;
+    height: 10%;
     width: 100%;
 `;
 
@@ -133,7 +138,7 @@ export const ImageGroup = styled.View`
 `;
 
 export const PokemonImage = styled.Image`
-    height: 300px;
+    height: 290px;
     width: 300px;
 `;
 

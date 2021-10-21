@@ -10,7 +10,7 @@ import {
 
 export function Header() {
   return (
-    <Container>
+    <Container >
         <ContentImage>
             <Image
               source={require('../../assets/pokeball.png')}
