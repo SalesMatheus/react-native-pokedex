@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Image } from 'react-native';
-
 import { useRoute } from '@react-navigation/native';
 
 import api from '../../service/api';
+
+import { ModalView } from '../../components/ModalView';
 
 import {
     Container,
@@ -69,8 +70,7 @@ export function PokemonDetail() {
             {
                 !isLoading && 
                     <>
-                    <Header>
-                    </Header>
+                        <Header />
                         <HeaderInfo>
                             <PokemonName>
                                 {pokemonDetails?.name}
@@ -91,7 +91,9 @@ export function PokemonDetail() {
                         </HeaderInfo>
 
                         <ImageGroup>
-                            <PokemonImage source={{ uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonDetails?.id}.png` }} />
+                            <PokemonImage 
+                                source={{ uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonDetails?.id}.png` }} 
+                            />
                             <ImageBackground>
                                 <Image
                                     source={require('../../assets/pokeball.png')}
@@ -99,6 +101,7 @@ export function PokemonDetail() {
                                 />
                             </ImageBackground>
                         </ImageGroup>
+                        <ModalView children={undefined} />
                     </>
             }
             
