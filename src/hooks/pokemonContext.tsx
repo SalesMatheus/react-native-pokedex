@@ -53,7 +53,8 @@ function PokemonContextProvider({ children }: PokemonContextProviderProps){
             //@ts-ignore
             setPokemons(pokemonsDataFormatted);
         } catch (error) {
-            throw new Error('Ocorreu um erro!');
+            //@ts-ignore
+            throw new Error(error);
         }
     }, []);
 
