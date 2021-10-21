@@ -101,7 +101,7 @@ export function PokemonDetail() {
                                 />
                             </ImageBackground>
                         </ImageGroup>
-                        <ModalView children={undefined} />
+                        <ModalView weight={pokemonDetails!.weight} height={pokemonDetails!.height}/>
                     </>
             }
             

@@ -28,14 +28,7 @@ export default {
         gray: '#757575',
         black: '#414141'
     },
-    fonts: {
-        primary_400: 'Inter_400Regular',
-        primary_500: 'Inter_500Medium',
-
-        secondary_400: 'Archivo_400Regular',
-        secondary_500: 'Archivo_500Medium',
-        secondary_600: 'Archivo_600SemiBold',
-    },
+    
     typeColor: {
         grasss: '#98D071',
         poison: '#944796',
@@ -55,5 +48,15 @@ export default {
         rock: '#BAA35B',
         steel: '#B8B8C5',
         water: '#3999F9',
-    }
+    },
+
+    fonts: {
+        primary_400: 'Inter_400Regular',
+        primary_500: 'Inter_500Medium',
+
+        secondary_400: 'Archivo_400Regular',
+        secondary_500: 'Archivo_500Medium',
+        secondary_600: 'Archivo_600SemiBold',
+    },
+    
 }
