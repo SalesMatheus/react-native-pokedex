@@ -1,3 +1,6 @@
+![cover](.github/tela1.png?style=flat)
+![cover](.github/tela2.png?style=flat)
+
 # Desafio
 Pokédex.
 
