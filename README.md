@@ -3,8 +3,8 @@
 </h1>
 
 <div align="center">
-  <img src=".github/tela1.png" width="200" height="400"/>
-  <img src=".github/tela2.png" width="200" height="400"/>
+  <img src=".github/screen1.png" width="200" height="400"/>
+  <img src=".github/screen2.png" width="200" height="400"/>
 </div>
 
 # Desafio
