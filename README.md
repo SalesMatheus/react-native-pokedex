@@ -1,5 +1,7 @@
-![cover](.github/tela1.png?style=flat)
-![cover](.github/tela2.png?style=flat)
+<div>
+  <img src="github/tela1.png" width="200" height="400"/>
+  <img src=".github/tela2.png" width="200" height="400"/>
+</div>
 
 # Desafio
 Pokédex.
