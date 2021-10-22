@@ -1,5 +1,5 @@
 <h1 align="center">
-    <a href="https://pokeapi.co/api/v2/pokemon/bulbasaur"><img src='https://veekun.com/dex/media/pokemon/global-link/1.png' height="80"/></a>
+    <img alt="Pokedex" src="https://ik.imagekit.io/hwyksvj4iv/pokedex_N_WgWrJK0s.png" width="250px" />
 </h1>
 
 <div align="center">
