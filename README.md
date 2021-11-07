@@ -2,7 +2,7 @@
     <img alt="Pokedex" src="https://ik.imagekit.io/hwyksvj4iv/pokedex_N_WgWrJK0s.png" width="250px" />
 </h1>
 
-<div align="center" margin-left="20px">
+<div align="center">
   <img src=".github/screen1.png" width="200" height="400"/>
   <img src=".github/screen2.png" width="200" height="400"/>
 </div>
