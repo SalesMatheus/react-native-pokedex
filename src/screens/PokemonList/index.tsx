@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 
 import { usePokemonContext } from '../../hooks/pokemonContext';
 
@@ -13,6 +13,10 @@ import {
 export function PokemonList() {
     const { fetchPokemons, pokemons } = usePokemonContext();
     
+    const renderPokemon = useCallback((pokemon) => {
+        return <CardPokemons pokemon={pokemon} />
+    },[])
+
     useEffect(() => {
         setTimeout(() => {
             fetchPokemons();
@@ -25,8 +29,7 @@ export function PokemonList() {
         <Container>
             <PokemonsList
                 data={pokemons}
-                //@ts-ignore
-                renderItem={pokemon => <CardPokemons pokemon={pokemon.item} />}
+                renderItem={pokemon => renderPokemon(pokemon.item)}
                 keyExtractor={(pokemon, item) => String(item)}
                 showsVerticalScrollIndicator={false}
                 ListHeaderComponent={( <Header /> )}

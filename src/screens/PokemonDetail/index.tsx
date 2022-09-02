@@ -65,14 +65,14 @@ export function PokemonDetail() {
         
     }
 
+    function handleGoBack(){
+        navigation.goBack();
+    }
+
     useEffect(() =>{
         fetchPokemon();
     },[]);
 
-    function handleGoBack(){
-        navigation.goBack();
-    }
-    
     return (
         <Container>
             {

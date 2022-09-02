@@ -52,8 +52,7 @@ function PokemonContextProvider({ children }: PokemonContextProviderProps){
             const pokemonsDataFormatted = formatPokemonData(response?.data?.results);
             //@ts-ignore
             setPokemons(pokemonsDataFormatted);
-        } catch (error) {
-            //@ts-ignore
+        } catch (error: any) {
             throw new Error(error);
         }
     }, []);
