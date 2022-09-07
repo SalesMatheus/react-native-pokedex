@@ -1,5 +1,8 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Image, TouchableOpacity, Alert } from 'react-native';
+
+import PokeballPNG from '../../assets/pokeball.png';
 
 import {
   Container,
@@ -21,11 +24,14 @@ interface Props {
 }
 
 export function CardPokemons({ pokemon: pokemonData }: Props) {
+  const { navigate } = useNavigation();
+
   function handlePokemonDetail(PokemonId: number) {
     if (PokemonId) {
-      return true;
+      navigate('PokemonDetail' as never, { PokemonId } as never);
+    } else {
+      Alert.alert('Pokémon não encontrado!');
     }
-    return Alert.alert('Pokémon não encontrado!');
   }
 
   return (
@@ -36,7 +42,7 @@ export function CardPokemons({ pokemon: pokemonData }: Props) {
       <Container>
         <ImageBackground>
           <Image
-            source={require('../../assets/pokeball.png')}
+            source={PokeballPNG}
             style={{ width: '100%', height: '100%' }}
           />
         </ImageBackground>
