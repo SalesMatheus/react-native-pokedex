@@ -18,6 +18,7 @@ interface PokemonContextProps {
 export interface PokemonListProps extends ApiCallProps {
   image: string;
   id: number;
+  
 }
 
 interface ApiCallProps {
